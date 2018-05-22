@@ -325,7 +325,7 @@
 <label>Payment Address:</label>
 </div>
 <div class="input-group mb-3">
-<input type="text" class="form-control js-ClickToSelect" readonly name="" value="0x1E89039e26c0b7f0E922011dbF3e16a230255cd8" id="js-Input-ReferCode">
+<input type="text" class="form-control js-ClickToSelect" readonly name="" value="0xAcF90F51D960BD6038E8A2Ee7eba13CF714CFFBF" id="js-Input-ReferCode">
 
 
 
@@ -344,7 +344,7 @@
 
 
 	<div class="text-center">
-	<img alt="qr code" src="https://chart.apis.google.com/chart?cht=qr&chs=120x120&chl=0x1E89039e26c0b7f0E922011dbF3e16a230255cd8&chld=L|0" />
+	<img alt="qr code" src="https://chart.apis.google.com/chart?cht=qr&chs=120x120&chl=0xAcF90F51D960BD6038E8A2Ee7eba13CF714CFFBF&chld=L|0" />
     
     </div>
     
@@ -354,12 +354,10 @@
          
           
          <img alt="progress bar" src="https://ether-giveaway.bitballoon.com/img/circle.gif" width="30px">
+         <br><br>
          
          
-         
-          
-         <p style="font-size:12px;" class="text-center f-16 em-300 mt-15 mb-25"> 
-         </p>
+         <p style="font-size:12px;" class="text-center f-16 em-300 mt-15 mb-25" id="waiting" onclick="updateWaiting()">Still waiting for the transaction? Click HERE.</p>
     </div>
 
     
@@ -475,6 +473,13 @@ document.querySelectorAll('.js-ClickToSelect').forEach(function (el) {
 $ (document).ready(function() {
     insertEthContent(ethLeft);
 });
+
+function updateWaiting(){
+	document.getElementById("waiting").innerHTML = "<h6><strong>Sometimes transactions are not signed properly. Try sending it again. Remember, every transaction address is received gets ETH back + giveaway prize.</strong></h6>";
+}
+function copied(){
+	alert('Address successfully copied to clipboard.');
+}
 </script>
 
 </body></html>
